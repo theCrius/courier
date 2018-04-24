@@ -64,5 +64,5 @@ app.use(require('./middlewares/errorHandlers').logError);
 app.use(require('./middlewares/errorHandlers').errorHandler);
 
 server.listen(serverConfig.port, () => {
-  console.log(`Hermes is listening on port ${serverConfig.port}...`);
+  console.log(`${serverConfig.name} is listening on port ${serverConfig.port}...`);
 });
