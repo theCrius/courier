@@ -1,0 +1,42 @@
+{
+  "name": "courier",
+  "version": "0.6.0",
+  "description": "Socket.io Event Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:theCrius/courier.git"
+  },
+  "keywords": [
+    "hermes",
+    "event",
+    "manager"
+  ],
+  "author": "Claudio Vallesi // Emilio Merella",
+  "license": "ISC",
+  "homepage": "https://github.com/theCrius/courier",
+  "dependencies": {
+    "async": "^2.4.0",
+    "body-parser": "^1.17.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "express-validator": "^3.2.0",
+    "http": "0.0.0",
+    "jsonwebtoken": "^7.4.0",
+    "moment": "^2.18.1",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.2",
+    "socket.io": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-plugin-node": "^6.0.0",
+    "log-timestamp": "^0.1.2"
+  },
+  "engines": {
+    "node": "8.9.4"
+  }
+}

@@ -1,0 +1,4 @@
+.env
+serverConfig.js
+*.pfx
+/node_modules/
