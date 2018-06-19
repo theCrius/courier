@@ -6,7 +6,7 @@ module.exports = {
  * Exported functions
  */
 function exit(req, res, next){
-  const response = req.websocketResponse;
+  const response = req.courierSocket;
   res.status(response.statusCode).json(response.data);
   next();
 }

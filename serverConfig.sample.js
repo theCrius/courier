@@ -1,11 +1,11 @@
 module.exports = {
-  "name": 'COURIER',
-  "host": "courier.local",
+  "name": process.env.COMPUTERNAME || 'Courier',
+  "host": "courier.website.com",
+  "https": false,
   "port": 4001,
-  "https": false, //If you turn this on, you can add the certs in the 'ssl' attributes
   "ssl": {
-    "pfx": 'certs/cert.file.pfx',
-    "passphrase": 'certs-password'
+    "pfx": 'cert\\wildcard.website.com.pfx',
+    "passphrase": 'password'
   },
-  "showLogs": true //Turn this off to not display every message sent to the service
+  "showLogs": false
 };

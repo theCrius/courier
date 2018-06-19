@@ -1,18 +1,18 @@
 const socket = require('socket.io');
 
 const namespaces = {
-  "SomeFrontend": require('./namespaces/somefrontend')
+  ExampleNamespace: require('./namespaces/example_namespace')
 };
 
-class Hermes {
+class Courier {
   constructor(server) {
     this.io = socket(server);
 
     this.namespaces = {
-      "somefrontend": new namespaces.SomeFrontend(this.io)
+      exampleNamespace: new namespaces.ExampleNamespace(this.io)
     };
   }
 }
 
 
-module.exports = Hermes;
+module.exports = Courier;

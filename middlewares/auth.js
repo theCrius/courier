@@ -1,3 +1,5 @@
+
+
 module.exports = {
   checkAuth
 };
@@ -12,7 +14,7 @@ module.exports = {
 function checkAuth(req, res, next){
   let err;
 
-  if (req.headers.authorization !== process.env.HERMES_SECRET) {
+  if (req.headers.authorization !== process.env.COURIER_SECRET) {
     err = {
       "at": 'hook',
       "statusCode": 403,

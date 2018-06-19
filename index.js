@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ "extended": true }));
 app.use(bodyParser.json());
 
 // Enable CORS
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   res.header("Access-Control-Allow-Methods", "HEAD, GET, POST, PUT, DELETE");
@@ -56,7 +56,7 @@ const websockets = require('./websockets/index');
 const WS = new websockets(server);
 
 app.use('/', (req, res, next) => {
-  req.webSocket = WS;
+  req.courierSocket = WS;
   next();
 }, require('./routes/eventManager'));
 
@@ -64,5 +64,5 @@ app.use(require('./middlewares/errorHandlers').logError);
 app.use(require('./middlewares/errorHandlers').errorHandler);
 
 server.listen(serverConfig.port, () => {
-  console.log(`${serverConfig.name} is listening on port ${serverConfig.port}...`);
+  console.log(`Courier is listening on port ${serverConfig.port}...`);
 });

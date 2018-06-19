@@ -14,19 +14,21 @@ module.exports = mod;
  * @param {next} next , Execute the next function.
  */
 function checkReq(req, res, next){
-  let err;
+  let err = null;
   const body = req.body;
-  let validationErrors = [];
+  const validationErrors = [];
+  const inputIsArray = Boolean(body) && body.constructor === Array;
 
-  if (Boolean(body) && body.constructor === Array){
+  if (inputIsArray){
     body.forEach((el) => {
+      // console.log('Element of Array', el);
       validationErrors.push(runValidations(el));
     });
   } else {
-    validationErrors = runValidations(body);
+    validationErrors.push(runValidations(body));
   }
 
-  if (validationErrors.length || validationErrors.findIndex((item) => item.length) !== -1) {
+  if (validationErrors.length && validationErrors.findIndex((i) => i.length) !== -1) {
     err = {
       "at": 'hook',
       "statusCode": 400,
